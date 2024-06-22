@@ -17,23 +17,21 @@ struct SwipeView: View {
     
     let quotes = QuoteManager.shared.loadQuotes(fromFile: "quotes")
     
+    @State private var isMovingToCategoriesView : Bool = false
+        
     var body: some View {
         
         ZStack {
-            RoundedRectangle(cornerRadius: 15)
-                .foregroundStyle(.thinMaterial)
-                .ignoresSafeArea()
-            
-            ScrollView(.vertical) {
-                ForEach(loadQuotes(), id: \.self) { quote in
-                    QuoteView(quote)
-                            .containerRelativeFrame([.horizontal, .vertical])
-                }
-            }
-            .scrollTargetBehavior(.paging)
+            background
+            scrollingQuotes
+            moveToCategoriesButton
+        }
+        .sheet(isPresented: $isMovingToCategoriesView){
+            CategoriesView()
+                .background(.thinMaterial)
+                .presentationDetents([.large])
         }
     }
-    
     
     var background : some View {
         RoundedRectangle(cornerRadius: 15)
@@ -41,7 +39,32 @@ struct SwipeView: View {
             .ignoresSafeArea()
     }
     
+    var scrollingQuotes : some View {
+        ScrollView(.vertical) {
+            ForEach(loadQuotes(), id: \.self) { quote in
+                QuoteView(quote)
+                        .containerRelativeFrame([.horizontal, .vertical])
+            }
+        }
+        .scrollTargetBehavior(.paging)
+    }
     
+    var moveToCategoriesButton: some View {
+        VStack {
+            Spacer()
+            
+            Button {
+                 isMovingToCategoriesView.toggle()
+            } label: {
+                Image(systemName: "circle.grid.2x2.fill")
+                    .font(.title3)
+                    .padding()
+                    .foregroundStyle(.foreground)
+                    .background(.thinMaterial)
+                    .clipShape(Circle())
+            }
+        }
+    }
     
     func loadQuotes() -> [Quote] {
         if let quotes = QuoteManager.shared.loadQuotes(fromFile: "quotes") {
