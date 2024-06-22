@@ -18,6 +18,7 @@
 		507431572C27172300EE5B97 /* ModalSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507431562C27172300EE5B97 /* ModalSizes.swift */; };
 		5074315C2C27177000EE5B97 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074315B2C27177000EE5B97 /* CategoriesView.swift */; };
 		5074315E2C2717FD00EE5B97 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5074315D2C2717FD00EE5B97 /* UIConstants.swift */; };
+		507431612C27209000EE5B97 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507431602C27209000EE5B97 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		507431562C27172300EE5B97 /* ModalSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalSizes.swift; sourceTree = "<group>"; };
 		5074315B2C27177000EE5B97 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		5074315D2C2717FD00EE5B97 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
+		507431602C27209000EE5B97 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		507431412C262ECA00EE5B97 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				5074315F2C27208A00EE5B97 /* Home */,
 				507431582C27175D00EE5B97 /* Categories */,
 				5074314E2C26371F00EE5B97 /* AuthorListView */,
 				507431432C262ED300EE5B97 /* SwipeView */,
@@ -200,6 +203,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		5074315F2C27208A00EE5B97 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				507431602C27209000EE5B97 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -271,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				507431612C27209000EE5B97 /* HomeView.swift in Sources */,
 				507431572C27172300EE5B97 /* ModalSizes.swift in Sources */,
 				5074315C2C27177000EE5B97 /* CategoriesView.swift in Sources */,
 				507431522C26373D00EE5B97 /* AuthorListViewModel.swift in Sources */,

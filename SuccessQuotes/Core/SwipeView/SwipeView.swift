@@ -40,13 +40,13 @@ struct SwipeView: View {
     }
     
     var scrollingQuotes : some View {
-        ScrollView(.vertical) {
-            ForEach(loadQuotes(), id: \.self) { quote in
-                QuoteView(quote)
-                        .containerRelativeFrame([.horizontal, .vertical])
+            ScrollView(.vertical) {
+                ForEach(loadQuotes(), id: \.self) { quote in
+                    QuoteView(quote)
+                            .containerRelativeFrame([.horizontal, .vertical])
+                }
             }
-        }
-        .scrollTargetBehavior(.paging)
+            .scrollTargetBehavior(.paging)
     }
     
     var moveToCategoriesButton: some View {
