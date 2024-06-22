@@ -11,7 +11,8 @@ import SwiftUI
 struct SuccessQuotesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SwipeView()
+                .monospaced()
         }
     }
 }
