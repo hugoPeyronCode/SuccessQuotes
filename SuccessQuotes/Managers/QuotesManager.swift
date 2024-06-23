@@ -7,8 +7,8 @@
 
 import Foundation
 
-class QuoteManager {
-    static let shared = QuoteManager()
+class QuotesManager {
+    static let shared = QuotesManager()
     
     private init() {}
     

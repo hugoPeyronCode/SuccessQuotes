@@ -18,7 +18,7 @@ struct AuthorsListView: View {
     }
     
     func loadUniqueAuthors() -> [String] {
-        if let quotes = QuoteManager.shared.loadQuotes(fromFile: "quotes") {
+        if let quotes = QuotesManager.shared.loadQuotes(fromFile: "quotes") {
             let uniqueAuthors = Set(quotes.map { $0.author })
             print(uniqueAuthors.description)
             return uniqueAuthors.sorted()

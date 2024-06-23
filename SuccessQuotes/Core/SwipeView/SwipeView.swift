@@ -15,7 +15,7 @@ struct Quote : Hashable, Codable {
 
 struct SwipeView: View {
     
-    let quotes = QuoteManager.shared.loadQuotes(fromFile: "quotes")
+    let quotes = QuotesManager.shared.loadQuotes(fromFile: "quotes")
     
     @State private var isMovingToCategoriesView : Bool = false
         
@@ -67,7 +67,7 @@ struct SwipeView: View {
     }
     
     func loadQuotes() -> [Quote] {
-        if let quotes = QuoteManager.shared.loadQuotes(fromFile: "quotes") {
+        if let quotes = QuotesManager.shared.loadQuotes(fromFile: "quotes") {
             return quotes.shuffled()
         } else { return [] }
     }
